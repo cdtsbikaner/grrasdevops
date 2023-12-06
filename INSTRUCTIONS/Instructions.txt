@@ -1,19 +1,23 @@
 Welcome! This is your Docker container. Here are the instructions to use this image:
-          - Step-1: Edit your /etc/hosts file, do entry of ServerName in front of this container IP
-        
-          - Step-2: Change entry in /etc/httpd/conf/httpd.conf file.
-            Note: Configuration File is below mentioned Copy and paste with small changes:
-        
-          - Step-3: Change four important entry in /var/www/html/wordpress/wp-config-sample.php file according to Database, User, Password, Grant.
-            Note: Configuration File is below mentioned Copy and paste with small changes:
-                    
-          - Step-4: Make "ServerName" in /var/www/html/wordpress/wp-config-sample.php & /etc/hosts ip entry should be same"
-        
-          - Step-5: Check current process running using # ps -ef & then start php-fpm socket using #/usr/sbin/php-fpm
 
-          - Step-6: Check php-fpm socket working or not, if yes then start Apache service using #/usr/sbin/httpd
+NOTE: Before starting wordpress container, first run mysql container with following command :
+# docker run -d --name=mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=wordpress -p 3606:3606 -v mysql_vol:/var/lib/mysql mysql           
+
+- Step-1: Edit your /etc/hosts file, do entry of ServerName in front of this container IP
         
-          - Step-7: For any info check this article: https://rakeshkumarjangid.hashnode.dev/unveiling-the-power-of-docker-building-seamless-wordpress-and-mysql-containers-on-rockylinux#heading-step-4-install-epel-amp-remi-repository
+- Step-2: Change entry in /etc/httpd/conf/httpd.conf file.
+  Note: Configuration File is below mention Copy and paste with small changes:
+        
+- Step-3: Change four important entry in /var/www/html/wordpress/wp-config-sample.php file according to Database, User, Password, Grant.
+  Note: Configuration File is below mentioned Copy and paste with small changes:
+                    
+- Step-4: Make "ServerName" in /var/www/html/wordpress/wp-config-sample.php & /etc/hosts ip entry should be same"
+        
+- Step-5: Check current process running using # ps -ef & then start php-fpm socket using #/usr/sbin/php-fpm
+
+- Step-6: Check php-fpm socket working or not, if yes then start Apache service using #/usr/sbin/httpd
+        
+- Step-7: For any info check this article: https://rakeshkumarjangid.hashnode.dev/unveiling-the-power-of-docker-building-seamless-wordpress-and-mysql-containers-on-rockylinux#heading-step-4-install-epel-amp-remi-repository
 
 
 -----------------------------------------------------------------------------------------------------------------

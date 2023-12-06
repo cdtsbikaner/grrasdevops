@@ -7,7 +7,7 @@ RUN dnf update -y && \
     dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm -y && \
     dnf module install php:remi-7.4 -y
 
-RUN yum install iproute procps-ng vim bind-utils wget nmap net-tools httpd iputils -y && \
+RUN yum install unzip iproute procps-ng vim bind-utils wget nmap net-tools httpd iputils -y && \
     yum install php-cli php-pear php-pdo php-mysqlnd php-gd php-mbstring php-mcrypt php-xml -y 
 
 RUN mkdir -p /var/www/html/ 
