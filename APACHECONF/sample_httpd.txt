@@ -1,0 +1,12 @@
+#Add these below lines at the end of httpd.conf just after "IncludeOptional conf.d/*.conf"
+
+<VirtualHost *:80>      
+    ServerAdmin  jangidrakesh71@gmail.com          
+    DocumentRoot /var/www/html/wordpress  
+    ServerName grras.com 
+    <Directory "/var/www/html/wordpress"> 
+         Allowoverride All 
+     </Directory>
+    ErrorLog logs/wordpress-error_log   
+    CustomLog logs/wordpress-access_log combined  
+</VirtualHost>
