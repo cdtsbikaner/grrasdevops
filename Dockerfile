@@ -20,7 +20,7 @@ ADD https://wordpress.org/latest.zip /var/www/html/
 
 WORKDIR /var/www/html
 
-RUN ./latest.zip && rm -rf latest.zip
+RUN unzip ./latest.zip && rm -rf latest.zip
 
 RUN chown -R apache:apache /var/www/html/wordpress && \
     chmod -R 755  /var/www/html/wordpress && \
